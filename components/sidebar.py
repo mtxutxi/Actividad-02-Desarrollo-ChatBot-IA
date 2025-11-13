@@ -3,8 +3,12 @@ import streamlit as st
 from utils import OpenAIClient
 from components import ChatInterface
 from config import DEFAULT_SETTING
+
+#instalo librerias nuevas markdown2 pdfkit y weasyprint
+
 import markdown2
 import pdfkit
+from weasyprint import HTML
 
 def create_sidebar():
     """ Creación y configuración la sidebar de la app"""
@@ -23,7 +27,7 @@ def create_sidebar():
         if st.button("🗑️ Limpiar Chat", use_container_width=True):
             ChatInterface.clear_chat()
         
-        # Exportar chat a texto 
+        # Exportar chat a PDF 
         if st.session_state.get('messages'):
             st.markdows("### 🗒️ Exportar Chat")
 
@@ -34,18 +38,21 @@ def create_sidebar():
                 "💾Descargar chat",
                 use_container_width=True,
                 ):
-                markdown_text = ChatInterface.export_chat()
-                html_text = markdown2.markdown(markdown_text)
+                try:
+                    markdown_text = ChatInterface.export_chat()
+                    html_text = markdown2.markdown(markdown_text)
 
-                pdf_data = pdfkit.from_string(html_text, False)
+                    pdf_data = HTML(string=html_text).write_pdf()
 
-                st.download_button(
-                    "💾Confirmar descarga",
-                    data=pdf_data,
-                    file_name=nombre_archivo,
-                    mime="application/pdf",
-                    use_container_width=True
-                )
+                    st.download_button(
+                        "💾Confirmar descarga",
+                        data=pdf_data,
+                        file_name=nombre_archivo,
+                        mime="application/pdf",
+                        use_container_width=True
+                    )
+                except Exception as e:
+                    st.error(f"Error al generar PDF: {e}")
         
         st.divider()
 
