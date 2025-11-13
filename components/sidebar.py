@@ -1,8 +1,8 @@
 from datetime import datetime
 import streamlit as st
-from utils import OpenAIClient
+from utils import GeminiClient, OpenAIClient
 from components import ChatInterface
-from config import DEFAULT_SETTING
+from config import DEFAULT_SETTINGS
 
 #instalo librerias nuevas markdown2 pdfkit y weasyprint
 
@@ -59,6 +59,7 @@ def create_sidebar():
 
 
         
+
 
 
 
