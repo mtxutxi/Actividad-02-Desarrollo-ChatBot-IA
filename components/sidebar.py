@@ -7,7 +7,6 @@ from config import DEFAULT_SETTINGS
 #instalo librerias nuevas markdown2 pdfkit y weasyprint
 
 import markdown2
-import pdfkit
 from weasyprint import HTML
 
 def create_sidebar():
