@@ -16,7 +16,8 @@ _Tener Python instalado en el ordenador y como IDE recomendamos Visual Studio Co
 
 [Instalar Python](https://kinsta.com/es/blog/instalar-python/)\
 [Instalar Visual Studio Code](https://code.visualstudio.com/download)\
-[SQL Server](https://learn.microsoft.com/es-es/ssms/install/install)
+[SQL Server](https://learn.microsoft.com/es-es/ssms/install/install)\
+[Instalar GTK3](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases/download/2022-01-04/gtk3-runtime-3.24.31-2022-01-04-ts-win64.exe)
 
 
 
