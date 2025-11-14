@@ -23,7 +23,7 @@ _Tener Python instalado en el ordenador y como IDE recomendamos Visual Studio Co
 
 ## Despliegue 📦
 
-_AQUI EXPLICAR COMO HACER LO DEL VENV, EL REQUIREMETNS... _
+_AQUI EXPLICAR COMO HACER LO DEL VENV, EL REQUIREMETNS... _ **CAMBIAR EN CONNECTION LA CONEXIÓN A LA BBDD
 
 ## Construido con 🛠️
 
