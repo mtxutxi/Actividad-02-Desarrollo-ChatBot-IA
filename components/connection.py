@@ -3,7 +3,7 @@ import pymssql
 class Connection:
         
     conn = pymssql.connect(
-        server='A407PC11:1433',
+        server='A407PC07',
         user='sa',
         password='tiger',
         database='Pubs'

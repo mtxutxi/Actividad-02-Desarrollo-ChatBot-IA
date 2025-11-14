@@ -28,7 +28,7 @@ def create_sidebar():
         
         # Exportar chat a PDF 
         if st.session_state.get('messages'):
-            st.markdows("### 🗒️ Exportar Chat")
+            st.markdown("### 🗒️ Exportar Chat")
 
             timestamp = datetime.now().strftime("%Y%m%d_%H%M")
             nombre_archivo = f"librerIA_chat:{timestamp}.pdf"
