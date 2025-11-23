@@ -24,6 +24,7 @@ _Tener Python instalado en el ordenador y como IDE recomendamos Visual Studio Co
 
 ## Despliegue 📦
 
+
 _AQUI EXPLICAR COMO HACER LO DEL VENV, EL REQUIREMETNS... _ **CAMBIAR EN CONNECTION LA CONEXIÓN A LA BBDD
 
 ## Construido con 🛠️
@@ -39,9 +40,8 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 ## Wiki 📖
 
-
-AQUI EXPLICAR COMO FUNCIONA
-
+LA funcion del chat bot es que tu le haces una ocnsulta en lenguaje natural, y el te lo devuelve en bloque SQL.
+<img width="2547" height="1403" alt="Captura de pantalla 2025-11-23 200708" src="https://github.com/user-attachments/assets/dfe74126-9f75-4301-8606-68987bda2270" />
 ## Autores ✒️
 
 * **Txutxi Martínez** 
