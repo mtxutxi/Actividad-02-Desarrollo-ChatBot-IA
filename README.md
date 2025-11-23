@@ -40,8 +40,10 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 ## Wiki 📖
 
-LA funcion del chat bot es que tu le haces una ocnsulta en lenguaje natural, y el te lo devuelve en bloque SQL.
-<img width="2547" height="1403" alt="Captura de pantalla 2025-11-23 200708" src="https://github.com/user-attachments/assets/dfe74126-9f75-4301-8606-68987bda2270" />
+El chat lo que hace es traducir tu consulta en lenguaje natural a un bloque SQL. Le hemos dado una lista de palabras proihibidas para que solo haga conusltas SELECT
+<img width="2548" height="1306" alt="Captura de pantalla 2025-11-23 222442" src="https://github.com/user-attachments/assets/f1f30c64-9a81-439f-af53-47580b1d35ed" />
+
+
 ## Autores ✒️
 
 * **Txutxi Martínez** 
