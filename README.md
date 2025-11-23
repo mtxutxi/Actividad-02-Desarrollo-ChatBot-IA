@@ -1,3 +1,4 @@
+![consultas](https://github.com/user-attachments/assets/be9a7b4a-d75c-4c78-8cf7-4c0d045ebccf)
 ![Badge en Desarollo](https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green)
 # LibrerIA
 
