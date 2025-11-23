@@ -1,0 +1,346 @@
+# Historial de Chat - LibrerIA
+
+## Mensaje 1 - 👤 Usuario
+
+Listame los autores mas vendidos
+
+---
+
+## Mensaje 2 - 🤖 LibrerIA
+
+```sql
+SELECT
+    a.au_fname,
+    a.au_lname,
+    SUM(s.qty) AS total_ventas
+FROM
+    authors AS a
+JOIN
+    titleauthor AS ta ON a.au_id = ta.au_id
+JOIN
+    titles AS t ON ta.title_id = t.title_id
+JOIN
+    sales AS s ON t.title_id = s.title_id
+GROUP BY
+    a.au_fname,
+    a.au_lname
+ORDER BY
+    total_ventas DESC;
+```
+
+
+---
+
+## Mensaje 3 - 👤 Usuario
+
+Listame los 10 libros mas caros mas vendidos
+
+---
+
+## Mensaje 4 - 🤖 LibrerIA
+
+```sql
+SELECT TOP 10
+    t.title,
+    t.price,
+    SUM(s.qty) AS total_ventas
+FROM
+    titles AS t
+JOIN
+    sales AS s ON t.title_id = s.title_id
+GROUP BY
+    t.title,
+    t.price
+ORDER BY
+    t.price DESC,
+    total_ventas DESC;
+```
+
+
+---
+
+## Mensaje 5 - 👤 Usuario
+
+Listame las cuidades con mas ventas
+
+---
+
+## Mensaje 6 - 🤖 LibrerIA
+
+```sql
+SELECT
+    s.city,
+    SUM(s.qty) AS total_ventas
+FROM
+    stores AS s
+JOIN
+    sales AS sa ON s.stor_id = sa.stor_id
+GROUP BY
+    s.city
+ORDER BY
+    total_ventas DESC;
+```
+
+
+---
+
+## Mensaje 7 - 👤 Usuario
+
+Listame el titulo mas vendido
+
+---
+
+## Mensaje 8 - 🤖 LibrerIA
+
+❌ **CONSULTA BLOQUEADA**
+
+⚠️ La respuesta debe contener una consulta SELECT.
+
+---
+
+*Consulta generada (bloqueada):*
+```sql
+Error al generar respuesta: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}
+```
+
+---
+
+## Mensaje 9 - 👤 Usuario
+
+dame el titulo del libro mas vendido
+
+---
+
+## Mensaje 10 - 🤖 LibrerIA
+
+```sql
+SELECT TOP 1 t.title
+FROM titles t
+JOIN sales s ON t.title_id = s.title_id
+GROUP BY t.title
+ORDER BY SUM(s.qty) DESC;
+```
+
+
+---
+
+## Mensaje 11 - 👤 Usuario
+
+dame los autores con menos ventas
+
+---
+
+## Mensaje 12 - 🤖 LibrerIA
+
+```sql
+SELECT
+    a.au_fname,
+    a.au_lname,
+    SUM(s.qty) AS total_ventas
+FROM
+    authors AS a
+JOIN
+    titleauthor AS ta ON a.au_id = ta.au_id
+JOIN
+    titles AS t ON ta.title_id = t.title_id
+JOIN
+    sales AS s ON t.title_id = s.title_id
+GROUP BY
+    a.au_fname,
+    a.au_lname
+ORDER BY
+    total_ventas ASC;
+```
+
+
+---
+
+## Mensaje 13 - 👤 Usuario
+
+listame los libros mas baratos
+
+---
+
+## Mensaje 14 - 🤖 LibrerIA
+
+```sql
+SELECT TOP 10
+    title,
+    price
+FROM
+    titles
+ORDER BY
+    price ASC;
+```
+
+
+---
+
+## Mensaje 15 - 👤 Usuario
+
+listame los libros menos vendidos en Seattle y los mas vendidos en Chicago
+
+---
+
+## Mensaje 16 - 🤖 LibrerIA
+
+```sql
+-- Libros menos vendidos en Seattle
+SELECT TOP 10
+    t.title AS titulo_menos_vendido_seattle,
+    SUM(s.qty) AS total_ventas_seattle
+FROM
+    titles AS t
+JOIN
+    sales AS s ON t.title_id = s.title_id
+JOIN
+    stores AS st ON s.stor_id = st.stor_id
+WHERE
+    st.city = 'Seattle'
+GROUP BY
+    t.title
+ORDER BY
+    total_ventas_seattle ASC;
+
+-- Libros más vendidos en Chicago
+SELECT TOP 10
+    t.title AS titulo_mas_vendido_chicago,
+    SUM(s.qty) AS total_ventas_chicago
+FROM
+    titles AS t
+JOIN
+    sales AS s ON t.title_id = s.title_id
+JOIN
+    stores AS st ON s.stor_id = st.stor_id
+WHERE
+    st.city = 'Chicago'
+GROUP BY
+    t.title
+ORDER BY
+    total_ventas_chicago DESC;
+```
+
+
+---
+
+## Mensaje 17 - 👤 Usuario
+
+Listame los autores que menos venden
+Listame los autores que mas venden
+Listame los libros mas caros
+Listame los 3 libros mas caros vendidos en Seattle y el nombre del autor
+Listame las ganancias de los autores
+
+
+---
+
+## Mensaje 18 - 🤖 LibrerIA
+
+```sql
+SELECT
+    a.au_fname,
+    a.au_lname,
+    SUM(s.qty) AS total_ventas
+FROM
+    authors AS a
+JOIN
+    titleauthor AS ta ON a.au_id = ta.au_id
+JOIN
+    titles AS t ON ta.title_id = t.title_id
+JOIN
+    sales AS s ON t.title_id = s.title_id
+GROUP BY
+    a.au_fname,
+    a.au_lname
+ORDER BY
+    total_ventas ASC;
+```
+
+```sql
+SELECT
+    a.au_fname,
+    a.au_lname,
+    SUM(s.qty) AS total_ventas
+FROM
+    authors AS a
+JOIN
+    titleauthor AS ta ON a.au_id = ta.au_id
+JOIN
+    titles AS t ON ta.title_id = t.title_id
+JOIN
+    sales AS s ON t.title_id = s.title_id
+GROUP BY
+    a.au_fname,
+    a.au_lname
+ORDER BY
+    total_ventas DESC;
+```
+
+```sql
+SELECT TOP 10
+    title,
+    price
+FROM
+    titles
+ORDER BY
+    price DESC;
+```
+
+```sql
+SELECT TOP 3
+    t.title,
+    t.price,
+    a.au_fname,
+    a.au_lname
+FROM
+    titles AS t
+JOIN
+    sales AS s ON t.title_id = s.title_id
+JOIN
+    stores AS st ON s.stor_id = st.stor_id
+JOIN
+    titleauthor AS ta ON t.title_id = ta.title_id
+JOIN
+    authors AS a ON ta.au_id = a.au_id
+WHERE
+    st.city = 'Seattle'
+ORDER BY
+    t.price DESC;
+```
+
+```sql
+SELECT
+    a.au_fname,
+    a.au_lname,
+    SUM(t.price * s.qty) AS total_ganancias
+FROM
+    authors AS a
+JOIN
+    titleauthor AS ta ON a.au_id = ta.au_id
+JOIN
+    titles AS t ON ta.title_id = t.title_id
+JOIN
+    sales AS s ON t.title_id = s.title_id
+GROUP BY
+    a.au_fname,
+    a.au_lname
+ORDER BY
+    total_ganancias DESC;
+```
+
+
+---
+
+## Mensaje 19 - 👤 Usuario
+
+Damelo todo en un pdf mostrando las tablas
+
+---
+
+## Mensaje 20 - 🤖 LibrerIA
+
+No puedo generar un PDF. Solo puedo crear consultas SELECT de lectura.
+
+
+---
+
