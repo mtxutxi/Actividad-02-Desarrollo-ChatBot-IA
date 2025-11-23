@@ -4,8 +4,6 @@ from openai import OpenAI
 from config import DEFAULT_SETTINGS
 from typing import Generator, List, Optional, Dict, Any
 
-#### heintentado dejar solo gemini pero me da errores de importacionde openai y no consigo ver donde y ademas me da errores de librerias 
-### ver que paaaaasano hago commit a mi propioa rama aun por si acaso
 class GeminiClient:
     """Cliente para Google Gemini API."""
 
@@ -130,7 +128,7 @@ def create_llm_provider(provider:str = "gemini") -> Any:
     Returns;
         Una instancia del cliente seleccionado
     """
-    if provider.lower() == 'genini':
+    if provider.lower() == 'gemini':
         return GeminiClient()
     elif provider.lower() == 'openai':
         return OpenAIClient()
