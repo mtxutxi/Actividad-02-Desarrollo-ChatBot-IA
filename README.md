@@ -1,5 +1,5 @@
 
-![Badge en Desarollo](https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green)
+![Badge en Desarollo](https://img.shields.io/badge/STATUS-FINALIZADO-green)
 # LibrerIA
 
 _Hemos creado un chat bot que se alimenta de una BBDD que contiene información sobre autores, libros, ventas, cachés de autores..._
