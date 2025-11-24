@@ -25,7 +25,12 @@ _Tener Python instalado en el ordenador y como IDE recomendamos Visual Studio Co
 ## Despliegue 📦
 
 
-_AQUI EXPLICAR COMO HACER LO DEL VENV, EL REQUIREMETNS... _ **CAMBIAR EN CONNECTION LA CONEXIÓN A LA BBDD
+Nos posicionamos en nuetsra carpeta del proyecto, abrimos cmd y ponemos los siguientes comandos para crear entorno virtual e instalars las depndencias que tenemos dentro de requirements</br>
+<img width="968" height="142" alt="abrir" src="https://github.com/user-attachments/assets/1d78e1a9-c69f-4681-ba1b-0826cae9d1d7" /></br>
+Una vez instalado todo abrimos el IDE con code .</br>
+<img width="984" height="101" alt="abrir2" src="https://github.com/user-attachments/assets/045aec63-1855-4b17-983c-a705327e44d7" /></br>
+Se va a abrir el Visual Studio Code, en la consola ponemos streamlit run ./app.py</br>
+<img width="667" height="178" alt="abrir3" src="https://github.com/user-attachments/assets/a4eefe52-9065-46f5-b705-17e30ae339bc" />
 
 ## Construido con 🛠️
 
@@ -33,7 +38,7 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 * Python
 * SQL Server Management Studio
-* Librerias: streamlit, google-genai, openai, dotenv, pymssql, markdown2, weasyprint, GTK3
+* Librerias: streamlit, google-genai, openai, dotenv, pymssql,reportlab, openpyxl
    
 
 
